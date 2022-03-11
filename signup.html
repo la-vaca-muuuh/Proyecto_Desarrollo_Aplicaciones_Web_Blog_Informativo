@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="css/login.css">
+    </head>
+    <body>
+        <section class="create">
+            <div class="titulo">Sing up</div>
+            <form th:object = "${user}"
+                  th:action="@{/save}"
+                  method="POST"
+                  >
+                <div class="form-group-row">
+                    <label for="Nombre">Nombre</label>
+                    <input type="text" th:field="*{Nombre}" id="nombre" aria-describedby="emailHelp">
+                </div>
+
+                <div class="form-group-row">
+                    <label for="apellido1">Apellido</label>
+                    <input type="text" th:field="*{apellido1}" id="apellido1" aria-describedby="emailHelp">   
+                </div>
+                
+                <div class="form-group-row">
+                    <label for="email">Email</label>
+                    <input type="text" th:field="*{email}" id="email" aria-describedby="emailHelp">   
+                </div>
+                <div class="form-group-row">
+                    <label for="password">Contraseña</label>
+                    <input type="password" th:field="*{password}"  id="password" aria-describedby="emailHelp">   
+                </div>
+                <div class="form-group-row">
+                    <label for="cpassword">Confirmar Contraseña</label>
+                    <input type="password" th:field="*{cpassword}" id="cpassword" aria-describedby="emailHelp">   
+                </div>
+
+
+                <button type="submit" class="btn btn-primary" value="Guardar">Create</button>
+            </form>
+        </section>
+    </body>
+</html>
